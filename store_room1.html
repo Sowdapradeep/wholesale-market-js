@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Store Room</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="./store_room.css">
+</head>
+
+<body>
+  <div class="sidebar">
+    <img src="logo.png" alt="Logo" />
+    <a href="./wholseler_fr.html">Home</a>
+    <a id="openAddProduct">Add Product</a>
+    <a id="openUpdate">Update</a>
+  </div>
+
+  <div class="topbar">
+    <h1>Store Room</h1>
+    <div class="search-box">
+      <input type="text" placeholder="Search products...">
+      <button>Search</button>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="chart-box">
+      <h3>Store Room Usage</h3>
+      <canvas id="storeChart" width="500" height="100"></canvas>
+    </div>
+
+    <div class="product-grid" id="productGrid">
+      <div class="card" data-name="Cotton Shirts">
+        <img src="i3.jpg" alt="Cotton Shirts">
+        <h2>Cotton Shirts</h2>
+        <p>In Stock: 350</p>
+        <button class="btn">Edit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <div class="modal-overlay" id="modalOverlay"></div>
+
+  <div class="modal" id="addProductModal">
+    <h3>Add New Product</h3>
+    <input type="text" id="newName" placeholder="Product Name">
+    <input type="number" id="newStock" placeholder="Stock Quantity">
+    <input type="text" id="newImage" placeholder="Image URL or Path">
+    <button class="btn" id="addProductBtn">Add Product</button>
+    <button class="btn" id="closeAddModal">Cancel</button>
+  </div>
+
+  <div class="modal" id="updateProductModal">
+    <h3>Update Product</h3>
+    <input type="text" id="searchName" placeholder="Enter Product Name">
+    <input type="text" id="editName" placeholder="New Name">
+    <input type="number" id="editStock" placeholder="New Stock">
+    <button class="btn" id="applyUpdate">Update</button>
+    <button class="btn" id="closeUpdateModal">Cancel</button>
+  </div>
+
+  <footer>
+    &copy; 2025 Wholesale Market. All rights reserved.
+  </footer>
+
+  <script src="./store_room.js"></script>
+</body>
+
+</html>

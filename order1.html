@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orders Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-y6+5W9qLztEPDld5gJoAj2VGq7U6XLN9bLu9+mEv0pF37xEtI7ZPf4XGq6FqRy3MXqCevh+V6OYh5xK7W+FdsQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./order.css">
+</head>
+<body>
+  <div class="topbar">
+    <h1>Orders</h1>
+    <div class="search-box">
+      <input type="text" id="searchBox" placeholder="Search by Order ID or Customer">
+      <button>Search</button>
+    </div>
+  </div>
+
+ <div class="sidebar">
+  <img src="logo.png" alt="Logo">
+  <a href="./production_fr.html"><i class="fas fa-home"></i> Home</a>
+  <a href="#" onclick="filterOrders('all')"><i class="fas fa-list"></i> Show All</a>
+  <a href="#" onclick="filterOrders('Pending')"><i class="fas fa-hourglass-half"></i> Pending</a>
+  <a href="#" onclick="filterOrders('Rejected')"><i class="fas fa-times-circle"></i> Rejection</a>
+  <a href="#" onclick="filterOrders('Waiting')"><i class="fas fa-clock"></i> Waiting</a>
+ </div>
+
+  <div class="content">
+    <table class="order-table" id="orderTable">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Status</th>
+          <th>Customer</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody id="orderBody">
+        <tr onclick="showPopup('101', 'Cotton Shirts', 20, 'Delivered')">
+          <td>#101</td>
+          <td>Cotton Shirts</td>
+          <td>20</td>
+          <td>Delivered</td>
+          <td>John Doe</td>
+          <td>2025-06-18</td>
+        </tr>
+        <tr onclick="showPopup('102', 'Jeans', 15, 'Pending')">
+          <td>#102</td>
+          <td>Jeans</td>
+          <td>15</td>
+          <td>Pending</td>
+          <td>Jane Smith</td>
+          <td>2025-06-19</td>
+        </tr>
+        <tr onclick="showPopup('103', 'Kids Wear', 10, 'Waiting')">
+          <td>#103</td>
+          <td>Kids Wear</td>
+          <td>10</td>
+          <td>Waiting</td>
+          <td>Ravi Kumar</td>
+          <td>2025-06-20</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal-overlay" id="modalOverlay"></div>
+  <div class="modal" id="orderModal">
+    <h3 id="modalTitle"></h3>
+    <p><strong>Quantity:</strong> <span id="modalQuantity"></span></p>
+    <p><strong>Status:</strong> <span id="modalStatus"></span></p>
+    <button class="approve" onclick="closeModal('Accepted')">Approve</button>
+    <button class="reject" onclick="closeModal('Rejected')">Reject</button>
+    <button class="wait" onclick="closeModal('Waiting')">Keep Waiting</button>
+  </div>
+
+  <script src="./order.js"></script>
+
+</body>
+</html>

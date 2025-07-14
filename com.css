@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.navbar {
+  background-color: #0096C7;
+  color: white;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar img {
+  height: 90px;
+}
+
+.nav-left a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-left a:hover {
+  color: #FFD700;
+}
+
+.container {
+  padding: 20px;
+}
+
+.company-info,
+.section {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.company-info h2 {
+  margin: 0 0 10px;
+  color: #0077a6;
+}
+
+.section h3 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table th,
+table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table th {
+  background-color: #e0f7ff;
+  color: #333;
+}
+
+.overview-box {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.overview-box .box {
+  flex: 1;
+  background-color: #f9fafc;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box h4 {
+  margin: 0;
+  font-size: 18px;
+  color: #555;
+}
+
+.box p {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 5px 0 0;
+  color: #0077a6;
+}
+
+footer {
+  background-color: #0096C7;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+
+@media (max-width: 768px) {
+  .overview-box {
+    flex-direction: column;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .nav-left {
+    flex-direction: column;
+  }
+}
